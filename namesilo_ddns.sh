@@ -7,7 +7,7 @@ DOMAIN="mydomain.tld"
 HOST="subdomain."
 
 ##APIKEY obtained from Namesilo:
-APIKEY="c40031261ee449037a4b4"
+APIKEY="xxxxxxxxxxxxxxx"
 
 ## Do not edit lines below ##
 
@@ -26,7 +26,7 @@ RESPONSE="/tmp/namesilo_response.xml"
 ##Choose randomly which OpenDNS resolver to use
 RESOLVER=resolver$(echo $((($RANDOM%4)+1))).opendns.com
 ##Get the current public IP using DNS
-CUR_IP="$(dig +short myip.opendns.com @$RESOLVER)"
+CUR_IP="$(curl -s http://icanhazip.com)"
 ODRC=$?
 
 ## Try google dns if opendns failed
